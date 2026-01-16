@@ -73,7 +73,8 @@ Kode itu cuma bikin query nya aja, belum menjalankannya. Jadi $produk bukan data
 - data tidak muncul sesuai yang dibutuhkan.
 
 #### 3. Solusi Perbaikan
-```bash $produk = Produk::where('nama', $nama)->first();
+```bash 
+$produk = Produk::where('nama', $nama)->first();
 return response()->json($produk);
 $produk = Produk::where('nama', $nama)->get();
 return response()->json($produk);
