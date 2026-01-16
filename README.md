@@ -56,6 +56,27 @@ Start Frontend (Vite)
 npm run dev
 ```
 
+## Task 4: Query Report Sederhana
+Product::selectRaw('
+    COUNT(*) as total_produk,
+    AVG(harga) as rate_price,
+    MIN(stock) as min_stock
+')->first();
+
+
+## Task 5: Debugging & Code Review
+1. Bug pada kode 
+Kode itu cuma bikin query nya aja, belum menjalankannya. Jadi $produk bukan data produk, tapi masih berupa query builder. Akhirnya waktu di-return, yang keluar bukan data, tapi objek query.
+
+2. Masalahnya
+- query tidak ter eksekusi.
+- data tidak muncul sesuai yang dibutuhkan.
+
+3. Solusi Perbaikan
+$produk = Produk::where('nama', $nama)->first();
+$produk = Produk::where('nama', $nama)->get();
+return response()->json($produk);
+
 
 
 
