@@ -57,12 +57,13 @@ npm run dev
 ```
 
 ## Task 4: Query Report Sederhana
+```bash
 Product::selectRaw('
     COUNT(*) as total_produk,
     AVG(harga) as rate_price,
     MIN(stock) as min_stock
 ')->first();
-
+```
 
 ## Task 5: Debugging & Code Review
 #### 1. Bug pada kode 
