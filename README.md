@@ -65,14 +65,14 @@ Product::selectRaw('
 
 
 ## Task 5: Debugging & Code Review
-1. Bug pada kode 
+#### 1. Bug pada kode 
 Kode itu cuma bikin query nya aja, belum menjalankannya. Jadi $produk bukan data produk, tapi masih berupa query builder. Akhirnya waktu di-return, yang keluar bukan data, tapi objek query.
 
-2. Masalahnya
+#### 2. Masalahnya
 - query tidak ter eksekusi.
 - data tidak muncul sesuai yang dibutuhkan.
 
-3. Solusi Perbaikan
+#### 3. Solusi Perbaikan
 $produk = Produk::where('nama', $nama)->first();
 $produk = Produk::where('nama', $nama)->get();
 return response()->json($produk);
