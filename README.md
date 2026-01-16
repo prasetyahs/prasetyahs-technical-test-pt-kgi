@@ -21,16 +21,16 @@ npm install
 cp .env.example .env
 ```
 
-### 3. Generate Application key
+### 4. Generate Application key
 ```bash
 php artisan key:generate
 ```
 
-### 3. Generate JWT Secret
+### 5. Generate JWT Secret
 ```bash
 php artisan jwt:secret
 ```
-### 4. Setup Koneksi database .env sesuikan dengan local anda
+### 6. Setup Koneksi database .env sesuikan dengan local anda
 ```bash
 DB_CONNECTION=pgsql
 DB_HOST=127.0.0.1
